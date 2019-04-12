@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "cross-fetch": "^3.0.2",
+    "googleapis": "<37.0.0",
+    "graphcool-lib": "^0.1.4",
+    "graphql-request": "^1.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^11.13.4"
+  },
+  "resolutions": {
+    "gtoken": "<2.3.1"
+  }
+}

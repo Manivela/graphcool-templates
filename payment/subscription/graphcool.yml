@@ -1,0 +1,32 @@
+# GraphQL types
+types: ./types.graphql
+
+# functions
+functions:
+  # create a new subscription for a user using a receipt.
+  subscribe:
+    type: resolver
+    schema: src/subscribe.graphql
+    handler:
+      code:
+        src: src/subscribe.ts
+        environment:
+          APPLE_VERIFY_RECEIPT_SUBDOMAIN: sandbox
+          APPLE_SHARED_SECRET: yoursecrethere
+          ANDROID_PACKAGE_NAME: yourpackagename
+
+  # check if the user has an active subscription
+  isPremium:
+    type: resolver
+    schema: src/isPremium.graphql
+    handler:
+      code:
+        src: src/isPremium.ts
+        environment:
+          APPLE_VERIFY_RECEIPT_SUBDOMAIN: sandbox
+          APPLE_SHARED_SECRET: yoursecrethere
+          ANDROID_PACKAGE_NAME: yourpackagename
+
+# development permissions
+permissions:
+  - operation: "*"

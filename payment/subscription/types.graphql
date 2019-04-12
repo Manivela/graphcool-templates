@@ -1,0 +1,18 @@
+type User @model {
+  subscription: [Subscription!]! @relation(name: "UserSubscriptions")
+}
+
+type Subscription @model {
+  # Required system field:
+  id: ID! @isUnique # read-only (managed by Graphcool)
+  # Optional system fields (remove if not needed):
+  createdAt: DateTime! # read-only (managed by Graphcool)
+  updatedAt: DateTime! # read-only (managed by Graphcool)
+  purchaseDate: DateTime
+  startDate: DateTime
+  expiryDate: DateTime
+  receipt: String
+  purchaseToken: String
+  subscriptionId: String
+  user: User @relation(name: "UserSubscriptions")
+}

@@ -1,0 +1,11 @@
+type SubscribeUserPayload {
+  result: Boolean
+}
+
+extend type Mutation {
+  subscribeUser(
+    receipt: String
+    purchaseToken: String
+    subscriptionId: String
+  ): SubscribeUserPayload
+}
